@@ -1,230 +1,231 @@
+/* config.h.  Generated from config.h.in by configure.  */
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* Should be defined in order to enable LIBXML2 support. */
-#undef ENABLE_LIBXML2
+#define ENABLE_LIBXML2 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_CONFIG_URI
+#define HAVE_DECL_SQLITE_CONFIG_URI 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_DBSTATUS_CACHE_HIT
+#define HAVE_DECL_SQLITE_DBSTATUS_CACHE_HIT 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_DBSTATUS_CACHE_MISS
+#define HAVE_DECL_SQLITE_DBSTATUS_CACHE_MISS 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_DBSTATUS_CACHE_USED
+#define HAVE_DECL_SQLITE_DBSTATUS_CACHE_USED 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_DBSTATUS_CACHE_WRITE
+#define HAVE_DECL_SQLITE_DBSTATUS_CACHE_WRITE 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_DBSTATUS_LOOKASIDE_HIT
+#define HAVE_DECL_SQLITE_DBSTATUS_LOOKASIDE_HIT 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_DBSTATUS_LOOKASIDE_MISS_FULL
+#define HAVE_DECL_SQLITE_DBSTATUS_LOOKASIDE_MISS_FULL 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_DBSTATUS_LOOKASIDE_MISS_SIZE
+#define HAVE_DECL_SQLITE_DBSTATUS_LOOKASIDE_MISS_SIZE 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_DBSTATUS_LOOKASIDE_USED
+#define HAVE_DECL_SQLITE_DBSTATUS_LOOKASIDE_USED 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_DBSTATUS_SCHEMA_USED
+#define HAVE_DECL_SQLITE_DBSTATUS_SCHEMA_USED 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_DBSTATUS_STMT_USED
+#define HAVE_DECL_SQLITE_DBSTATUS_STMT_USED 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_FCNTL_VFSNAME
+#define HAVE_DECL_SQLITE_FCNTL_VFSNAME 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_STMTSTATUS_AUTOINDEX
+#define HAVE_DECL_SQLITE_STMTSTATUS_AUTOINDEX 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_STMTSTATUS_FULLSCAN_STEP
+#define HAVE_DECL_SQLITE_STMTSTATUS_FULLSCAN_STEP 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_STMTSTATUS_SORT
+#define HAVE_DECL_SQLITE_STMTSTATUS_SORT 1
 
 /* depending on SQLite library version. */
-#undef HAVE_DECL_SQLITE_TESTCTRL_EXPLAIN_STMT
+#define HAVE_DECL_SQLITE_TESTCTRL_EXPLAIN_STMT 1
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
-#undef HAVE_DLFCN_H
+#define HAVE_DLFCN_H 1
 
 /* Define to 1 if you have the <expat.h> header file. */
-#undef HAVE_EXPAT_H
+#define HAVE_EXPAT_H 1
 
 /* Define to 1 if you have the <fcntl.h> header file. */
-#undef HAVE_FCNTL_H
+#define HAVE_FCNTL_H 1
 
 /* Define to 1 if you have the `fdatasync' function. */
-#undef HAVE_FDATASYNC
+#define HAVE_FDATASYNC 1
 
 /* Define to 1 if you have the <float.h> header file. */
-#undef HAVE_FLOAT_H
+#define HAVE_FLOAT_H 1
 
 /* Define to 1 if you have the `ftruncate' function. */
-#undef HAVE_FTRUNCATE
+#define HAVE_FTRUNCATE 1
 
 /* Define to 1 if you have the `getcwd' function. */
-#undef HAVE_GETCWD
+#define HAVE_GETCWD 1
 
 /* Define to 1 if you have the `gettimeofday' function. */
-#undef HAVE_GETTIMEOFDAY
+#define HAVE_GETTIMEOFDAY 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
-#undef HAVE_INTTYPES_H
+#define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the `expat' library (-lexpat). */
-#undef HAVE_LIBEXPAT
+#define HAVE_LIBEXPAT 1
 
 /* Define to 1 if you have the `sqlite3' library (-lsqlite3). */
-#undef HAVE_LIBSQLITE3
+#define HAVE_LIBSQLITE3 1
 
 /* Define to 1 if you have the `localtime_r' function. */
-#undef HAVE_LOCALTIME_R
+#define HAVE_LOCALTIME_R 1
 
 /* Define to 1 if `lstat' has the bug that it succeeds when given the
    zero-length file name argument. */
-#undef HAVE_LSTAT_EMPTY_STRING_BUG
+/* #undef HAVE_LSTAT_EMPTY_STRING_BUG */
 
 /* Define to 1 if you have the <math.h> header file. */
-#undef HAVE_MATH_H
+#define HAVE_MATH_H 1
 
 /* Define to 1 if you have the `memmove' function. */
-#undef HAVE_MEMMOVE
+#define HAVE_MEMMOVE 1
 
 /* Define to 1 if you have the <memory.h> header file. */
-#undef HAVE_MEMORY_H
+#define HAVE_MEMORY_H 1
 
 /* Define to 1 if you have the `memset' function. */
-#undef HAVE_MEMSET
+#define HAVE_MEMSET 1
 
 /* Define to 1 if you have the `readline' function. */
-#undef HAVE_READLINE
+#define HAVE_READLINE 1
 
 /* Define to 1 if you have the <sqlite3ext.h> header file. */
-#undef HAVE_SQLITE3EXT_H
+#define HAVE_SQLITE3EXT_H 1
 
 /* Define to 1 if you have the <sqlite3.h> header file. */
-#undef HAVE_SQLITE3_H
+#define HAVE_SQLITE3_H 1
 
 /* Define to 1 if you have the `sqrt' function. */
-#undef HAVE_SQRT
+/* #undef HAVE_SQRT */
 
 /* Define to 1 if `stat' has the bug that it succeeds when given the
    zero-length file name argument. */
-#undef HAVE_STAT_EMPTY_STRING_BUG
+/* #undef HAVE_STAT_EMPTY_STRING_BUG */
 
 /* Define to 1 if you have the <stddef.h> header file. */
-#undef HAVE_STDDEF_H
+#define HAVE_STDDEF_H 1
 
 /* Define to 1 if you have the <stdint.h> header file. */
-#undef HAVE_STDINT_H
+#define HAVE_STDINT_H 1
 
 /* Define to 1 if you have the <stdio.h> header file. */
-#undef HAVE_STDIO_H
+#define HAVE_STDIO_H 1
 
 /* Define to 1 if you have the <stdlib.h> header file. */
-#undef HAVE_STDLIB_H
+#define HAVE_STDLIB_H 1
 
 /* Define to 1 if you have the `strcasecmp' function. */
-#undef HAVE_STRCASECMP
+#define HAVE_STRCASECMP 1
 
 /* Define to 1 if you have the `strerror' function. */
-#undef HAVE_STRERROR
+#define HAVE_STRERROR 1
 
 /* Define to 1 if you have the `strftime' function. */
-#undef HAVE_STRFTIME
+#define HAVE_STRFTIME 1
 
 /* Define to 1 if you have the <strings.h> header file. */
-#undef HAVE_STRINGS_H
+#define HAVE_STRINGS_H 1
 
 /* Define to 1 if you have the <string.h> header file. */
-#undef HAVE_STRING_H
+#define HAVE_STRING_H 1
 
 /* Define to 1 if you have the `strncasecmp' function. */
-#undef HAVE_STRNCASECMP
+#define HAVE_STRNCASECMP 1
 
 /* Define to 1 if you have the `strstr' function. */
-#undef HAVE_STRSTR
+#define HAVE_STRSTR 1
 
 /* Define to 1 if you have the <sys/stat.h> header file. */
-#undef HAVE_SYS_STAT_H
+#define HAVE_SYS_STAT_H 1
 
 /* Define to 1 if you have the <sys/time.h> header file. */
-#undef HAVE_SYS_TIME_H
+#define HAVE_SYS_TIME_H 1
 
 /* Define to 1 if you have the <sys/types.h> header file. */
-#undef HAVE_SYS_TYPES_H
+#define HAVE_SYS_TYPES_H 1
 
 /* Define to 1 if you have the <unistd.h> header file. */
-#undef HAVE_UNISTD_H
+#define HAVE_UNISTD_H 1
 
 /* Define to 1 if `lstat' dereferences a symlink specified with a trailing
    slash. */
-#undef LSTAT_FOLLOWS_SLASHED_SYMLINK
+#define LSTAT_FOLLOWS_SLASHED_SYMLINK 1
 
 /* Define to the sub-directory where libtool stores uninstalled libraries. */
-#undef LT_OBJDIR
+#define LT_OBJDIR ".libs/"
 
 /* Should be defined in order to disable ReadOSM support. */
-#undef OMIT_READOSM
+/* #undef OMIT_READOSM */
 
 /* Name of package */
-#undef PACKAGE
+#define PACKAGE "spatialite-tools"
 
 /* Define to the address where bug reports for this package should be sent. */
-#undef PACKAGE_BUGREPORT
+#define PACKAGE_BUGREPORT "a.furieri@lqt.it"
 
 /* Define to the full name of this package. */
-#undef PACKAGE_NAME
+#define PACKAGE_NAME "spatialite-tools"
 
 /* Define to the full name and version of this package. */
-#undef PACKAGE_STRING
+#define PACKAGE_STRING "spatialite-tools 5.1.0a"
 
 /* Define to the one symbol short name of this package. */
-#undef PACKAGE_TARNAME
+#define PACKAGE_TARNAME "spatialite-tools"
 
 /* Define to the home page for this package. */
-#undef PACKAGE_URL
+#define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#undef PACKAGE_VERSION
+#define PACKAGE_VERSION "5.1.0a"
 
 /* must be defined when using libspatialite-amalgamation */
-#undef SPATIALITE_AMALGAMATION
+/* #undef SPATIALITE_AMALGAMATION */
 
 /* Define to 1 if you have the ANSI C header files. */
-#undef STDC_HEADERS
+#define STDC_HEADERS 1
 
 /* Define to 1 if your <sys/time.h> declares `struct tm'. */
-#undef TM_IN_SYS_TIME
+/* #undef TM_IN_SYS_TIME */
 
 /* Version number of package */
-#undef VERSION
+#define VERSION "5.1.0a"
 
 /* Must be =64 in order to enable huge-file support. */
-#undef _FILE_OFFSET_BITS
+#define _FILE_OFFSET_BITS 64
 
 /* Must be defined in order to enable huge-file support. */
-#undef _LARGEFILE_SOURCE
+#define _LARGEFILE_SOURCE 1
 
 /* Must be defined in order to enable huge-file support. */
-#undef _LARGE_FILE
+#define _LARGE_FILE 1
 
 /* Define to empty if `const' does not conform to ANSI C. */
-#undef const
+/* #undef const */
 
 /* Define to `long int' if <sys/types.h> does not define. */
-#undef off_t
+/* #undef off_t */
 
 /* Define to `unsigned int' if <sys/types.h> does not define. */
-#undef size_t
+/* #undef size_t */
 
 /* Define to empty if the keyword `volatile' does not work. Warning: valid
    code using `volatile' can become incorrect without. Disable with care. */
-#undef volatile
+/* #undef volatile */

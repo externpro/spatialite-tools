@@ -1,11 +1,14 @@
 ACLOCAL_AMFLAGS = -I m4
 
-if NO_READOSM
+if READOSM
 bin_PROGRAMS = spatialite \
 	spatialite_tool \
 	spatialite_network \
 	shp_doctor shp_sanitize \
 	exif_loader \
+	spatialite_osm_net \
+	spatialite_osm_map \
+	spatialite_osm_raw \
 	spatialite_osm_filter \
 	spatialite_gml \
 	spatialite_convert \
@@ -23,9 +26,6 @@ bin_PROGRAMS = spatialite \
 	spatialite_network \
 	shp_doctor shp_sanitize \
 	exif_loader \
-	spatialite_osm_net \
-	spatialite_osm_map \
-	spatialite_osm_raw \
 	spatialite_osm_filter \
 	spatialite_gml \
 	spatialite_convert \
@@ -53,8 +53,7 @@ spatialite_xml_load_SOURCES = spatialite_xml_load.c
 spatialite_xml2utf8_SOURCES = spatialite_xml2utf8.c
 spatialite_xml_collapse_SOURCES = spatialite_xml_collapse.c
 spatialite_xml_print_SOURCES = spatialite_xml_print.c 
-if NO_READOSM
-else
+if READOSM
 spatialite_osm_net_SOURCES = spatialite_osm_net.c
 spatialite_osm_map_SOURCES = spatialite_osm_map.c
 spatialite_osm_raw_SOURCES = spatialite_osm_raw.c
@@ -64,31 +63,16 @@ spatialite_gml_SOURCES = spatialite_gml.c
 spatialite_osm_overpass_SOURCES = spatialite_osm_overpass.c
 spatialite_dem_SOURCES = spatialite_dem.c
 
-spatialite_osm_map_LDADD = @LIBSPATIALITE_LIBS@ \
-	@LIBFREEXL_LIBS@ @LIBREADOSM_LIBS@ 
-spatialite_osm_overpass_LDADD = @LIBSPATIALITE_LIBS@ \
-	@LIBFREEXL_LIBS@ @LIBXML2_LIBS@ 
-spatialite_osm_raw_LDADD = @LIBSPATIALITE_LIBS@ \
-	@LIBFREEXL_LIBS@ @LIBREADOSM_LIBS@
-spatialite_osm_net_LDADD = @LIBSPATIALITE_LIBS@ \
-	@LIBFREEXL_LIBS@ @LIBREADOSM_LIBS@
-spatialite_gml_LDADD = @LIBSPATIALITE_LIBS@ \
-	@LIBFREEXL_LIBS@ \
-	-lexpat 
-spatialite_dem_LDADD = @LIBSPATIALITE_LIBS@ 
-spatialite_LDADD = @LIBSPATIALITE_LIBS@ \
-	@LIBFREEXL_LIBS@ \
-	@READLINE_LIBS@
-spatialite_xml_validator_LDADD = @LIBXML2_LIBS@
-spatialite_xml_load_LDADD = @LIBSPATIALITE_LIBS@ \
-	-lexpat
-spatialite_xml_collapse_LDADD = @LIBSPATIALITE_LIBS@
-spatialite_xml_print_LADD = @LIBSPATIALIATE_LIBS@
-LDADD = @LIBSPATIALITE_LIBS@ \
-	@LIBFREEXL_LIBS@
+spatialite_osm_map_LDADD = @LIBSPATIALITE_LIBS@ @LIBREADOSM_LIBS@ 
+spatialite_osm_raw_LDADD = @LIBSPATIALITE_LIBS@ @LIBREADOSM_LIBS@
+spatialite_osm_net_LDADD = @LIBSPATIALITE_LIBS@ @LIBREADOSM_LIBS@
+spatialite_gml_LDADD = @LIBSPATIALITE_LIBS@	-lexpat
+spatialite_LDADD = @LIBSPATIALITE_LIBS@ @READLINE_LIBS@
+spatialite_xml_load_LDADD = @LIBSPATIALITE_LIBS@ -lexpat
+LDADD = @LIBSPATIALITE_LIBS@
 
 EXTRA_DIST = makefile.vc nmake.opt makefile64.vc nmake64.opt \
-	config-msvc.h \
+	config.h config.h.in config-msvc.h \
 	Makefile-static-MinGW \
 	Makefile-static-mingw32 \
 	Makefile-static-mingw64 \
