@@ -3235,6 +3235,7 @@ do_meta_command (char *zLine, struct callback_data *p)
 	  if (err_msg)
 	      free (err_msg);
       }
+#ifndef OMIT_GEOS		/* GEOS is enabled */
     else if (c == 'l' && n > 1 && strncmp (azArg[0], "loaddxf", n) == 0
 	     && (nArg == 2 || (nArg >= 3 && nArg <= 9)))
       {
@@ -3304,6 +3305,7 @@ do_meta_command (char *zLine, struct callback_data *p)
 	  /* destroying the DXF parser */
 	  gaiaDestroyDxfParser (dxf);
       }
+#endif /* end GEOS support */
     else if (c == 'r' && strncmp (azArg[0], "read", n) == 0)
       {
 	  FILE *alt;
