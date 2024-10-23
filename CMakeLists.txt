@@ -66,8 +66,6 @@ else()
     DOWNLOAD_COMMAND sudo dnf -y install --setopt=tsflags=nodocs epel-release && sudo dnf -y install sqlite-devel libxml2-devel
     SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR} BINARY_DIR ${CMAKE_CURRENT_LIST_DIR}
     CONFIGURE_COMMAND export LIBXML2_CFLAGS=-I/usr/include/libxml2 && export LIBXML2_LIBS=-lxml2 &&
-    #export LIBSPATIALITE_CFLAGS=-I/bpvol/workspace/libspatialite/_bld/epbase/Install/libspatialite/include &&
-    #export LIBSPATIALITE_LIBS=-lspatialite &&
       PKG_CONFIG_PATH=/bpvol/workspace/libspatialite/_bld/epbase/Install/libspatialite/lib/pkgconfig/ &&
       <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --disable-readosm
     )
