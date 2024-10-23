@@ -14,9 +14,10 @@ if(TRUE)
     set(XP_INSTALL_CMAKEDIR ${CMAKE_INSTALL_DATADIR}/cmake)
   endif()
   xpPackageDevel(TARGETS_FILE ${targetsFile})
-  xpFindPkg(PKGS libspatialite)
+  xpFindPkg(PKGS libiconv libspatialite)
   include(configure)
   set(spatialite_srcs shell.c)
+  set(spatialite_deps xpro::libiconv)
   set(exes
     spatialite # a complete CLI front-end, more or less equivalent to the well known sqlite3 front-end, but fully supporting SpatiaLite
     spatialite_tool # a tool supporting import/export of Shapefiles and DBF-files
@@ -52,7 +53,7 @@ if(TRUE)
     else()
       add_executable(${exe} ${exe}.c)
     endif()
-    target_link_libraries(${exe} PRIVATE xpro::libspatialite)
+    target_link_libraries(${exe} PRIVATE xpro::libspatialite ${${exe}_deps})
     target_include_directories(${exe} PRIVATE ${CMAKE_BINARY_DIR}/cmake)
     target_compile_definitions(${exe} PRIVATE SQLITE_OMIT_TRACE) # TODO
     install(TARGETS ${exe} EXPORT ${targetsFile} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} CONFIGURATIONS Release)
