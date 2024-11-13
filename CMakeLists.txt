@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.28)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/.devcontainer/cmake ${CMAKE_CURRENT_LIST_DIR}/cmake)
 include(preproject)
-project(spatialite-tools VERSION 5.1.0.1)
+project(spatialite-tools VERSION 5.1.0.2)
 set(xVer) # letter after CMAKE_PROJECT_VERSION, for example 5.1.0a
 include(flags)
 include(GNUInstallDirs)
