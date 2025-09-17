@@ -62,27 +62,29 @@ xpcfgLstatFollowsSlashedSymlink(LSTAT_FOLLOWS_SLASHED_SYMLINK)
 set(ENABLE_LIBXML2 FALSE) # TODO find package
 set(OMIT_READOSM TRUE) # --enable-readosm : enables ReadOSM inclusion
 set(SPATIALITE_AMALGAMATION FALSE) # TODO determine?
-xpcfgSetDefineList(ENABLE_LIBXML2 OMIT_READOSM SPATIALITE_AMALGAMATION)
 xpcfgStdcHeaders(STDC_HEADERS)
 xpcfgTmInHdr(sys/time.h TM_IN_SYS_TIME)
-# cmakedefine entries in config.h.cmake.in
 xpcfgLtObjdir(LT_OBJDIR)
-set(PACKAGE ${CMAKE_PROJECT_NAME})
-set(PACKAGE_BUGREPORT a.furieri@lqt.it)
-set(PACKAGE_NAME ${CMAKE_PROJECT_NAME})
-set(PACKAGE_STRING "${CMAKE_PROJECT_NAME} ${CMAKE_PROJECT_VERSION}${xVer}")
-set(PACKAGE_TARNAME ${CMAKE_PROJECT_NAME})
-set(PACKAGE_URL https://www.gaia-gis.it/fossil/libspatialite/home)
-set(PACKAGE_VERSION ${CMAKE_PROJECT_VERSION}${xVer})
-set(VERSION ${CMAKE_PROJECT_VERSION}${xVer})
+set(PACKAGE "\"${CMAKE_PROJECT_NAME}\"")
+set(PACKAGE_BUGREPORT "\"a.furieri@lqt.it\"")
+set(PACKAGE_NAME "\"${CMAKE_PROJECT_NAME}\"")
+set(PACKAGE_STRING "\"${CMAKE_PROJECT_NAME} ${CMAKE_PROJECT_VERSION}${xVer}\"")
+set(PACKAGE_TARNAME "\"${CMAKE_PROJECT_NAME}\"")
+set(PACKAGE_URL "\"https://www.gaia-gis.it/fossil/libspatialite/home\"")
+set(PACKAGE_VERSION "\"${CMAKE_PROJECT_VERSION}${xVer}\"")
+set(VERSION "\"${CMAKE_PROJECT_VERSION}${xVer}\"")
 xpcfgHugeFileSupport()
-xpcfgConst()
+xpcfgConst(const)
 xpcfgCheckTypeSize()
 if(NOT HAVE_SIZEOF_OFF_T)
   set(off_t "long int") # Define to `long int' if <sys/types.h> does not define. */
+else()
+  set(off_t 0) # cmakedefine
 endif()
 if(NOT HAVE_SIZEOF_SIZE_T)
   set(size_t "unsigned int") # Define to `unsigned int' if <sys/types.h> does not define.
+else()
+  set(size_t 0) # cmakedefine
 endif()
 xpcfgVolatile(volatile)
 cmake_pop_check_state()
