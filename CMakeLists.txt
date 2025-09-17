@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.31)
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/.devcontainer/cmake ${CMAKE_CURRENT_LIST_DIR}/cmake)
-include(preproject)
-project(spatialite-tools VERSION 5.1.0.4)
-set(xVer) # letter after CMAKE_PROJECT_VERSION, for example 5.1.0a
-include(flags)
+set(CMAKE_PROJECT_TOP_LEVEL_INCLUDES .devcontainer/cmake/xproinc.cmake)
+project(spatialite-tools VERSION 5.1.0)
+set(xVer a) # letter after CMAKE_PROJECT_VERSION, for example 5.1.0a
+include(xpflags)
 include(GNUInstallDirs)
 option(BUILD_AUTOMAKE "build with automake" OFF)
 if(BUILD_AUTOMAKE)
@@ -26,7 +25,7 @@ else()
   endif()
   xpPackageDevel(TARGETS_FILE ${targetsFile})
   xpFindPkg(PKGS libiconv libspatialite)
-  include(configure)
+  include(cmake/configure.cmake)
   set(spatialite_srcs shell.c)
   set(spatialite_deps xpro::libiconv)
   set(exes
