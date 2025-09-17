@@ -5,7 +5,18 @@ project(spatialite-tools VERSION 5.1.0.4)
 set(xVer) # letter after CMAKE_PROJECT_VERSION, for example 5.1.0a
 include(flags)
 include(GNUInstallDirs)
-if(TRUE)
+option(BUILD_AUTOMAKE "build with automake" OFF)
+if(BUILD_AUTOMAKE)
+  include(ExternalProject)
+  set_property(DIRECTORY PROPERTY "EP_BASE" ${CMAKE_BINARY_DIR}/epbase)
+  ExternalProject_Add(${PROJECT_NAME}
+    DOWNLOAD_COMMAND sudo dnf -y install --setopt=tsflags=nodocs epel-release && sudo dnf -y install sqlite-devel libxml2-devel
+    SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR} BINARY_DIR ${CMAKE_CURRENT_LIST_DIR}
+    CONFIGURE_COMMAND export LIBXML2_CFLAGS=-I/usr/include/libxml2 && export LIBXML2_LIBS=-lxml2 &&
+      PKG_CONFIG_PATH=/bpvol/workspace/libspatialite/_bld/epbase/Install/libspatialite/lib/pkgconfig/ &&
+      <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --disable-readosm
+    )
+else()
   set(targetsFile ${CMAKE_PROJECT_NAME}-targets)
   if(DEFINED XP_NAMESPACE)
     set(nameSpace NAMESPACE ${XP_NAMESPACE}::)
@@ -59,14 +70,4 @@ if(TRUE)
     install(TARGETS ${exe} EXPORT ${targetsFile} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} CONFIGURATIONS Release)
   endforeach()
   install(EXPORT ${targetsFile} DESTINATION ${XP_INSTALL_CMAKEDIR} ${nameSpace})
-else()
-  include(ExternalProject)
-  set_property(DIRECTORY PROPERTY "EP_BASE" ${CMAKE_BINARY_DIR}/epbase)
-  ExternalProject_Add(${PROJECT_NAME}
-    DOWNLOAD_COMMAND sudo dnf -y install --setopt=tsflags=nodocs epel-release && sudo dnf -y install sqlite-devel libxml2-devel
-    SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR} BINARY_DIR ${CMAKE_CURRENT_LIST_DIR}
-    CONFIGURE_COMMAND export LIBXML2_CFLAGS=-I/usr/include/libxml2 && export LIBXML2_LIBS=-lxml2 &&
-      PKG_CONFIG_PATH=/bpvol/workspace/libspatialite/_bld/epbase/Install/libspatialite/lib/pkgconfig/ &&
-      <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --disable-readosm
-    )
 endif()
