@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.31)
 set(CMAKE_PROJECT_TOP_LEVEL_INCLUDES .devcontainer/cmake/xproinc.cmake)
 project(spatialite-tools VERSION 5.1.0)
 set(xVer a) # letter after CMAKE_PROJECT_VERSION, for example 5.1.0a
-include(xpflags)
-include(GNUInstallDirs)
 option(BUILD_AUTOMAKE "build with automake" OFF)
 if(BUILD_AUTOMAKE)
   include(ExternalProject)
