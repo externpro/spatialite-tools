@@ -16,12 +16,17 @@ if(BUILD_AUTOMAKE)
 else()
   set(targetsFile ${CMAKE_PROJECT_NAME}-targets)
   if(DEFINED XP_NAMESPACE)
+    xpExternPackage(TARGETS_FILE ${targetsFile}
+      BASE ${CMAKE_PROJECT_VERSION}${xVer} XPDIFF "auto" PVT_DEPS libspatialite
+      WEB "https://www.gaia-gis.it/fossil/spatialite-tools/index"
+      DESC "collection of open source Command Line Interface (CLI) tools supporting SpatiaLite"
+      LICENSE "[GPL-3.0](https://www.gaia-gis.it/fossil/spatialite-tools/index 'GPL-3.0-or-later')"
+      )
     set(nameSpace NAMESPACE ${XP_NAMESPACE}::)
+    set(CMAKE_INSTALL_CMAKEDIR ${XP_INSTALL_CMAKEDIR})
+  elseif(NOT DEFINED CMAKE_INSTALL_CMAKEDIR)
+    set(CMAKE_INSTALL_CMAKEDIR ${CMAKE_INSTALL_DATADIR}/cmake)
   endif()
-  if(NOT DEFINED XP_INSTALL_CMAKEDIR)
-    set(XP_INSTALL_CMAKEDIR ${CMAKE_INSTALL_DATADIR}/cmake)
-  endif()
-  xpPackageDevel(TARGETS_FILE ${targetsFile})
   xpFindPkg(PKGS libiconv libspatialite)
   include(cmake/configure.cmake)
   set(spatialite_srcs shell.c)
@@ -66,5 +71,5 @@ else()
     target_compile_definitions(${exe} PRIVATE SQLITE_OMIT_TRACE) # TODO
     install(TARGETS ${exe} EXPORT ${targetsFile} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} CONFIGURATIONS Release)
   endforeach()
-  install(EXPORT ${targetsFile} DESTINATION ${XP_INSTALL_CMAKEDIR} ${nameSpace})
+  install(EXPORT ${targetsFile} DESTINATION ${CMAKE_INSTALL_CMAKEDIR} ${nameSpace})
 endif()
