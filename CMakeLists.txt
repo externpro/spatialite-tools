@@ -23,7 +23,6 @@ else()
       LICENSE "[GPL-3.0](https://www.gaia-gis.it/fossil/spatialite-tools/index 'GPL-3.0-or-later')"
       )
     set(nameSpace NAMESPACE ${XP_NAMESPACE}::)
-    set(CMAKE_INSTALL_CMAKEDIR ${XP_INSTALL_CMAKEDIR})
   elseif(NOT DEFINED CMAKE_INSTALL_CMAKEDIR)
     set(CMAKE_INSTALL_CMAKEDIR ${CMAKE_INSTALL_DATADIR}/cmake)
   endif()
