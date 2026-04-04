@@ -20,7 +20,7 @@ else()
       BASE ${CMAKE_PROJECT_VERSION}${xVer} XPDIFF "auto" PVT_DEPS libspatialite
       WEB "https://www.gaia-gis.it/fossil/spatialite-tools/index"
       DESC "collection of open source Command Line Interface (CLI) tools supporting SpatiaLite"
-      LICENSE "[GPL-3.0](https://www.gaia-gis.it/fossil/spatialite-tools/index 'GPL-3.0-or-later')"
+      LICENSE "[GPL-3.0-or-later](https://www.gaia-gis.it/fossil/spatialite-tools/index 'GNU General Public License v3 or later')"
       )
     set(nameSpace NAMESPACE ${XP_NAMESPACE}::)
   elseif(NOT DEFINED CMAKE_INSTALL_CMAKEDIR)
