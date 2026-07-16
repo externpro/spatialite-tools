@@ -1,5 +1,4 @@
 include(xpcfg)
-set(sqliteTarget xpro::SQLite3)
 if(TARGET ${sqliteTarget})
   get_target_property(sqliteIncludes ${sqliteTarget} INTERFACE_INCLUDE_DIRECTORIES)
 endif()
