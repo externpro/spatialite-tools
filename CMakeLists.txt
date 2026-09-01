@@ -62,7 +62,7 @@ else()
     install(TARGETS ${exe} EXPORT ${targetsFile} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} CONFIGURATIONS Release)
   endforeach()
   if(COMMAND xpExternPackage)
-    xpExternPackage(TARGETS_FILE ${targetsFile} EXE spatialite FIND_XPRO_CMAKE
+    xpExternPackage(TARGETS_FILE ${targetsFile} EXE spatialite
       BASE ${CMAKE_PROJECT_VERSION}${xVer} XPDIFF "auto"
       WEB "https://www.gaia-gis.it/fossil/spatialite-tools/index"
       DESC "collection of open source Command Line Interface (CLI) tools supporting SpatiaLite"
